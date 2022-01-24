@@ -1,0 +1,98 @@
+
+.btn{
+  &:link,
+  &:visited{
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition:  all .2s;/*it moves the button up and down very smoothly/slowly*/
+    border: none;
+    position: relative; /*to set the design behind/after the button when u hover*/
+    font-size: 1.8rem;
+    font-weight: 500;
+
+  }
+
+  &:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba($color-back,.3);
+
+        &::after{
+          transform: scale(1.5);
+          opacity:0;
+        }
+
+  }
+
+  &:active{
+    transform: translateY(-1px);
+    box-shadow: 0 .5rem 1rem rgba($color-back,.5);
+
+  }
+  &--white{
+    color: $color-grey-dark;
+    background-color: $color-white;
+
+    &::after{
+      background-color:  $color-white;
+    }
+  }
+  &--green{
+    color: $color-white;
+    background-color: $color-primary;
+
+    &::after{
+      background-color: $color-primary;
+    }
+  }
+  &::after{
+    content: "";
+    display: inline-block;
+    height: 100%;/*this is the for the button which we already declared */
+    width: 100%;
+    border-radius: 10rem;
+    /*to set the design behind/after the button when u hover*/
+    position: absolute;
+    top: 0;
+    left:0;
+    z-index: -1;
+    transition: all .4s;
+  }
+
+  /*to set the design behind/after the button when u hover*/
+  
+
+  /*to set the design behind/after the button when u hover*/
+ 
+  &--animated{
+    animation: buttonMove .5s ease-out .7s;
+    animation-fill-mode: backwards;
+  }
+}
+.btn-text {
+  &:link,
+  &:visited {
+    color: $color-primary;
+    display: inline-block;
+    font-size: $default-font-size;
+    text-decoration: none;
+    border-bottom: 1px solid $color-primary-dark;
+    padding: 0.3rem;
+    transition: all .2s;
+  
+  }
+
+  &:hover{
+    color: $color-white;
+    background-color: $color-primary;
+    box-shadow: 0px 1rem 2rem rgba($color-back, .20);
+    transform: translateY(-2px);
+ }
+
+  &:active {
+    box-shadow: 0px 1rem 2rem rgba($color-back, .20);
+    transform: translateY(-2px);
+  }
+}
